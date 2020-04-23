@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      localStorage.clear();
+    </script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link
+      rel="icon"
+      href="https://img.icons8.com/nolan/16/coronavirus.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <title>CoViz Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Amaranth"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Atomic+Age"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Autour+One"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Cherry+Cream+Soda"
+    />
+    <link rel="stylesheet" href="/css/Footer-Basic.css" />
+    <link rel="stylesheet" href="/css/Navigation-Clean.css" />
+    <script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body style="background-color: #f4c4a0;">
+    <nav
+      class="navbar navbar-light navbar-expand-md navigation-clean"
+      style="background-color: #ff4b4b;"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="color: rgb(255, 255, 255); font-family: 'Autour One', cursive;"
+          >CoViz Chatbot</a
+        ><button
+          data-toggle="collapse"
+          class="navbar-toggler"
+          data-target="#navcol-1"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="nav navbar-nav ml-auto"></ul>
+          <button
+            class="btn btn-primary"
+            type="button"
+            style="margin-right: 20px; background-color: #0077b5;"
+          >
+            <a
+              href="https://www.linkedin.com/in/vishweswar53/"
+              style="text-decoration: none; color: white;"
+              ><i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              LinkedIn</a
+            ></button
+          ><button
+            class="btn btn-primary"
+            type="button"
+            style="background-color: #24292e;"
+          >
+            <a
+              href="https://github.com/Vishu8"
+              style="text-decoration: none; color: white;"
+              ><i class="fa fa-github" aria-hidden="true"></i> GitHub</a
+            >
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-lg-6">
+            <h1
+              style="
+                margin-top: 100px;
+                font-family: Amaranth, sans-serif;
+                font-size: 60px;
+              "
+            >
+              Welcome to CoViz
+            </h1>
+            <p style="margin-top: 50px; font-size: 18px;">
+              This a COVID-19 Chatbot Developed by Vishweswar aka V1zH3d. Made
+              on Rasa Framework. Chat with it and get all the info about the
+              novel coronavirus.
+            </p>
+            <blockquote
+              class="blockquote"
+              style="margin-top: 40px; margin-bottom: 100px;"
+            >
+              <p class="mb-0">
+                When Henry Ford made cheap, reliable cars, people said, ‘Nah,
+                what’s wrong with a horse?’ That was a huge bet he made, and it
+                worked.
+              </p>
+              <footer class="blockquote-footer">
+                Elon Musk (CEO of SpaceX)
+              </footer>
+            </blockquote>
+          </div>
+          <div class="col-md-4 col-lg-6">
+            <img
+              src="https://assets-ouch.icons8.com/free-download/251/62583d4d-1180-48fc-baca-835a2fba826f.png?filename=hugo-chatbot.png"
+              style="width: 600px; margin-top: 0;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-basic" style="background-color: #404040;">
+      <footer>
+        <p class="copyright" style="color: #1f2021;">
+          <a
+            href="http://weblaze.in"
+            style="color: white; text-decoration: none; font-size: 16px;"
+            >WeBlaze © 2020</a
+          >
+        </p>
+      </footer>
+    </div>
+    <div id="webchat" />
+    <script>
+      WebChat.default.init({
+        selector: "#webchat",
+        initPayload: "/greet",
+        customData: {
+          language: "en",
+        },
+        socketUrl: "http://localhost:5005",
+        socketPath: "/socket.io/",
+        title: "CoViz Chatbot",
+        subtitle: "A COVID-19 Chatbot by Vishweswar",
+        hideWhenNotConnected: true,
+        displayUnreadCount: true,
+        showMessageDate: true,
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- menu
+- about_corona
+- covid_test
+- symptoms
+- precaution
+- my_area_cases
+- enter_name
+- enter_email
+- enter_mobile
+- enter_pincode
+- news
+- india_cases
+- state_cases
+- enter_state
+- global_cases
+- country_cases
+- enter_country
+- covid_map
+- quarantine_tips
+- myth_buster
+- goodbye
+entities:
+- name
+- email
+- mobile
+- pincode
+- state
+- country
+slots:
+  country:
+    type: text
+  email:
+    type: unfeaturized
+  mobile:
+    type: unfeaturized
+  name:
+    type: text
+  pincode:
+    type: unfeaturized
+  state:
+    type: text
+responses:
+  utter_greet:
+  - text: Hey! I am CoViz a COVID-19 chatbot developed by Vishweswar aka V1zH3d.
+  utter_menu:
+  - text: "These are the list of things what I can do \n - aboutcorona - Know about\
+      \ corona virus \n - covidtest - Test yourself of COVID-19 \n - symptoms - Symptoms\
+      \ of   COVID-19 \n - precaution - Precaution needed for COVID-19 \n - myareacases\
+      \ - Sends you cases of COVID-19 in your area \n - news - Reports COVID-19 news\
+      \ \n - indiacases - Reports COVID-19 India cases \n - statecases - Reports state\
+      \ wise COVID-19 cases. Example: statecases Maharastra \n - globalcases - Reports\
+      \ COVID-19 Global cases \n - countrycases - Reports country wise COVID-19 cases.\
+      \ Example countrycases United States of America \n - covidmap - Displays global\
+      \ map country wise COVID-19 cases \n - quarantinetips - Tips for what you can\
+      \ do in quarantine \n - mythbuster - Some myths about COVID-19 \nYou can type\
+      \ menu to get the list of things I can do. \n\"Together will fight against corona\""
+    buttons:
+    - title: About Coronavirus
+      payload: /about_corona
+    - title: COVID-19 Test
+      payload: /covid_test
+    - title: COVID-19 Symptoms
+      payload: /symptoms
+    - title: Precaution from COVID-19
+      payload: /precaution
+    - title: Cases Near Me
+      payload: /my_area_cases
+    - title: COVID-19 News
+      payload: /news
+    - title: India's Cases
+      payload: /india_cases
+    - title: State Wise Cases
+      payload: /state_cases
+    - title: Global Cases
+      payload: /global_cases
+    - title: Country Wise Cases
+      payload: /country_cases
+    - title: Global COVID-19 Map
+      payload: /covid_map
+    - title: Quarantine Tips
+      payload: /quarantine_tips
+    - title: COVID-19 Myth Buster
+      payload: /myth_buster
+  utter_about_corona:
+  - text: "Coronavirus disease (COVID-19) is an infectious disease caused by a newly\
+      \ discovered coronavirus. \n Most people infected with the COVID-19 virus will\
+      \ experience mild to moderate respiratory illness and recover without requiring\
+      \ special treatment.  Older people, and those with underlying medical problems\
+      \ like cardiovascular disease, diabetes, chronic respiratory disease, and cancer\
+      \ are more likely to develop serious illness. \n To know more about COVID-19\
+      \ visit WHO [website] (https://www.who.int/health-topics/coronavirus)"
+  utter_covid_test:
+  - text: "Test COVID-19 by answering few questions. \n Visit [Apollo Hospital COVID-19\
+      \ test] (https://covid.apollo247.com/)"
+  utter_symptoms:
+  - text: "These are the symptoms of COVID-19 issued by CDC (The Centers for Disease\
+      \ Control and Prevention). \nTo know more about COVID-19 symptoms visit [CDC\
+      \ website] (https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html)"
+    image: https://www.cdc.gov/coronavirus/2019-ncov/images/social/covid19-symptoms-fb.png
+  utter_precaution:
+  - text: "These are some of the precaution you need to take for COVID-19 issued by\
+      \ WHO (World Health Organization). \nTo know more about what precautions you\
+      \ may visit the [WHO website] (https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public)"
+    image: https://www.who.int/images/default-source/wpro/health-topic/COVID-19/slide39d52040065b54a20b4f75e1c5f6607c6.tmb-1920v.jpeg?sfvrsn=a6e74ee6_4
+  utter_my_area_cases:
+  - text: To know about cases near you
+  utter_enter_name:
+  - text: Please enter your name
+  utter_enter_email:
+  - text: Please enter your email
+  utter_enter_mobile:
+  - text: Please enter mobile number
+  utter_enter_pincode:
+  - text: Please enter pincode
+  utter_mail_sent:
+  - text: A mail has been sent to you with current COVID-19 cases in your area.
+  utter_news:
+  - text: 'COVID-19 top headlines:'
+  utter_india_cases:
+  - text: "COVID-19 India's Stats:"
+  utter_state_cases:
+  - text: Want to know state wise cases?
+  utter_enter_state:
+  - text: Please enter a state name
+  utter_global_cases:
+  - text: 'COVID-19 Global Stats:'
+  utter_country_cases:
+  - text: Want to know country wise cases?
+  utter_enter_country:
+  - text: Please enter a country name
+  utter_covid_map:
+  - text: To view country wise COVID-19 cases please visit this [website] (https://8sni6.csb.app/)
+  utter_quarantine_tips1:
+  - text: These are some of the quarantine tips you can do while staying home.
+  utter_quarantine_tips2:
+  - text: Quarantine Tips 1
+    image: https://www.who.int/images/default-source/health-topics/coronavirus/risk-communications/general-public/stress/stress.tmb-1920v.jpg?sfvrsn=b8974505_17
+  utter_quarantine_tips3:
+  - text: Quarantine Tips 2
+    image: https://www.who.int/images/default-source/health-topics/coronavirus/risk-communications/general-public/stress/children-stress.tmb-1920v.jpg?sfvrsn=343355fd_4
+  utter_myth_buster1:
+  - text: These are some of the myths about COVID-19 and need to stop the rumors.
+  utter_myth_buster2:
+  - text: Myth Buster 1
+    image: https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide3.tmb-300v.jpeg?sfvrsn=26f96fd3_3
+  utter_myth_buster3:
+  - text: Myth Buster 2
+    image: https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide5.tmb-300v.jpeg?sfvrsn=3e577c23_3
+  utter_myth_buster4:
+  - text: Myth Buster 3
+    image: https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide10.tmb-300v.jpeg?sfvrsn=c8ca94e1_3
+  utter_myth_buster5:
+  - text: Myth Buster 4
+    image: https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide9.tmb-300v.jpeg?sfvrsn=95c1545b_3
+  utter_myth_buster6:
+  - text: Myth Buster 5
+    image: https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide6.tmb-300v.jpeg?sfvrsn=f3044431_3
+  utter_myth_buster7:
+  - text: Myth Buster 6
+    image: https://www.who.int/images/default-source/wpro/health-topic/covid-19/slide4.tmb-300v.jpeg?sfvrsn=41d8301e_3
+  utter_goodbye:
+  - text: "Thank you for talking with me. Hope I would have given ample infomation\
+      \ about COVID-19. \nTill then \"Be safe, stay home\" - \"Go Corona Go\""
+    image: https://www.who.int/images/default-source/health-topics/coronavirus/social-media-squares/be-ready-social-3.tmb-1920v.jpg?sfvrsn=1706a18f_24
+  utter_default:
+  - text: Sorry, I didn't understand! Can you repeat this?
+  - text: Pardon, What did you say?
+  - text: Can you please repeat again?
+  - text: Didn't understand what you said. Repeat again.
+actions:
+- utter_greet
+- utter_menu
+- utter_about_corona
+- utter_covid_test
+- utter_symptoms
+- utter_precaution
+- utter_my_area_cases
+- utter_enter_name
+- utter_enter_email
+- utter_enter_mobile
+- utter_enter_pincode
+- utter_mail_sent
+- utter_news
+- utter_india_cases
+- utter_state_cases
+- utter_enter_state
+- utter_global_cases
+- utter_country_cases
+- utter_enter_country
+- utter_covid_map
+- utter_quarantine_tips1
+- utter_quarantine_tips2
+- utter_quarantine_tips3
+- utter_myth_buster1
+- utter_myth_buster2
+- utter_myth_buster3
+- utter_myth_buster4
+- utter_myth_buster5
+- utter_myth_buster6
+- utter_myth_buster7
+- utter_goodbye
+- utter_default
+- action_set_name
+- action_set_email
+- action_set_mobile
+- action_set_pincode
+- action_news
+- action_india_cases
+- action_set_state
+- action_global_cases
+- action_set_country
+forms:
+- user_details_form
+- state_form
+- country_form
