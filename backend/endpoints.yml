@@ -27,10 +27,10 @@ action_endpoint:
 
 tracker_store:
    type: mongod
-   url: mongodb+srv://vishu:d925rjZwLxvF6P00@cluster0-p5lkb.mongodb.net/rasa?retryWrites=true&w=majority
+   url: mongodb+srv://your_username:your_password@cluster0-p5lkb.mongodb.net/rasa?retryWrites=true&w=majority
    db: rasa
-   username: vishu
-   password: d925rjZwLxvF6P00
+   username: your_username
+   password: your password
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/api/event-brokers/
