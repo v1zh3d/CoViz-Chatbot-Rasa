@@ -107,7 +107,7 @@ class NearbyCasesSendEmail(FormAction):
         email = str(tracker.get_slot("email"))
         mobile = str(tracker.get_slot("mobile"))
         pincode = str(tracker.get_slot("pincode"))
-        regex_email = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+        regex_email = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         regex_mobile = "[0-9]{10}"
         regex_pincode = "[0-9]{6}"
         if re.search(regex_email, email) is None:
@@ -288,6 +288,8 @@ class GetStateCases(FormAction):
             state = state.replace("&", "and")
         if state == "Tamilnadu":
             state = "Tamil Nadu"
+        elif state == "Delhi ":
+            state = "Delhi"
         try:
             url = "https://api.covid19india.org/data.json"
             res = requests.get(url)
