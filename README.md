@@ -2,10 +2,7 @@
 This is a COVID-19 Chatbot built with Rasa Framework which provides all vital information regarding novel coronavirus.
 
 Steps needed to run this project:
-1. You need to install docker first. To download just visit this [website](https://www.docker.com/products/docker-desktop) 
-   
-***Note:*** *Docker cannot be installed on Windows 10 Home*
- 
+1. You need to install docker first. To download just visit this [website](https://www.docker.com/products/docker-desktop) (***Note:*** *Docker cannot be installed on Windows 10 Home*) 
 2. In your project directory just open command prompt or terminal and type this command:
 
 ```docker-compose up --build```
