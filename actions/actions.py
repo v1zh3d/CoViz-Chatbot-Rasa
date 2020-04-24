@@ -107,7 +107,7 @@ class NearbyCasesSendEmail(FormAction):
         email = str(tracker.get_slot("email"))
         mobile = str(tracker.get_slot("mobile"))
         pincode = str(tracker.get_slot("pincode"))
-        regex_email = "^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        regex_email = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
         regex_mobile = "[0-9]{10}"
         regex_pincode = "[0-9]{6}"
         if re.search(regex_email, email) is None:
@@ -283,7 +283,11 @@ class GetStateCases(FormAction):
 
         state = tracker.get_slot("state")
         state = state.lower()
-        state = state.capitalize()
+        state = state.title()
+        if "&" in state:
+            state = state.replace("&", "and")
+        if state == "Tamilnadu":
+            state = "Tamil Nadu"
         try:
             url = "https://api.covid19india.org/data.json"
             res = requests.get(url)
@@ -374,27 +378,18 @@ class GetCountryCases(FormAction):
 
         country = tracker.get_slot("country")
         country = country.lower()
-        country = country.capitalize()
-        if country == "USA" or country == "usa" or country == "United States Of America":
-            country = "United States of America"
-        elif country == "UK" or country == "uk":
-            country = "United Kingdom"
-        elif country == "UAE" or country == "uae":
-            country = "United Arab Emirates"
+        country = country.title()
         try:
-            url = "https://api.covid19api.com/summary"
+            url = "https://corona.lmao.ninja/v2/countries/" + country
             res = requests.get(url)
             jsonRes = res.json()
-            countryWiseCases = jsonRes["Countries"]
-            print(len(countryWiseCases))
-            for i in range(len(countryWiseCases)):
-                if countryWiseCases[i]["Country"] == country:
-                    confirmed = str(countryWiseCases[i]["TotalConfirmed"])
-                    recovered = str(countryWiseCases[i]["TotalRecovered"])
-                    deaths = str(countryWiseCases[i]["TotalDeaths"])
-                    dispatcher.utter_message(
-                        f"{country} stats of COVID-19 are: \n\nConfirmed Cases: {confirmed} \n\nRecovered Cases: {recovered} \n\nDeaths: {deaths}")
-                    break
+            countryWiseCases = jsonRes
+            if countryWiseCases["country"]:
+                confirmed = str(countryWiseCases["cases"])
+                recovered = str(countryWiseCases["recovered"])
+                deaths = str(countryWiseCases["deaths"])
+                dispatcher.utter_message(
+                    f"{country} stats of COVID-19 are: \n\nConfirmed Cases: {confirmed} \n\nRecovered Cases: {recovered} \n\nDeaths: {deaths}")
             else:
                 dispatcher.utter_message(
                     f"Sorry we could not find any country named {country}. It might be a misspelling or we don't have record of the country.")
